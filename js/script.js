@@ -1,5 +1,9 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+let score = 0;
+let canScore = true;
+
+document.querySelector('.score-box').innerText = "Score: " + score;
 
 const jump = () => {
     mario.classList.add('jump');
@@ -7,6 +11,7 @@ const jump = () => {
     setTimeout(() => {
         mario.classList.remove('jump');
     }, 500);
+
 }
 
 const loop = setInterval(() => {
@@ -24,6 +29,16 @@ const loop = setInterval(() => {
         mario.style.marginLeft = '50px';
 
         clearInterval(loop);
+    }
+
+    if (pipePosition < 0 && canScore) {
+        score += 10;
+        canScore = false;
+        document.querySelector('.score-box').innerText = "Score: " + score;
+    }
+
+    if (pipePosition > 120) {
+        canScore = true;
     }
 }, 10);
 
