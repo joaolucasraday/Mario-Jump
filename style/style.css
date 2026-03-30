@@ -55,6 +55,35 @@
     background-color: yellow;
     padding: 1px 5px;
     border: 5px solid black;
+    z-index: 999;
+}
+
+.gameover-box{
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    font-family: 'game-font';
+    font-size: 3rem;
+    color: rgb(255, 0, 0);
+}
+
+.playagain-button {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 15px;
+    border: 5px solid black;
+    font-family: 'game-font';
+    font-size: 2rem;
+    width: 200px;
+    background-color: yellow;
+}
+
+.playagain-button:hover {
+    background-color: rgb(231, 231, 0);
 }
 
 @keyframes pipe-animation {

@@ -17,6 +17,7 @@ const jump = () => {
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+    const gameover = document.querySelector('.gameover-box');
 
     if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
         pipe.style.animation = 'none';
@@ -27,6 +28,7 @@ const loop = setInterval(() => {
         mario.src = './imgs/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
+        gameover.style.display = 'block';
 
         clearInterval(loop);
     }
