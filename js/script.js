@@ -7,12 +7,13 @@ document.querySelector('.score-box').innerText = "Score: " + score;
 
 const jump = () => {
     mario.classList.add('jump');
-
+    
     setTimeout(() => {
         mario.classList.remove('jump');
     }, 500);
 
 }
+
 
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
