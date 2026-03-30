@@ -26,7 +26,6 @@ const jump = () => {
     }, 500);
 };
 
-
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
@@ -41,7 +40,7 @@ const loop = setInterval(() => {
         mario.src = './imgs/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
-        gameover.style.display = 'block';
+        gameover.style.display = 'grid';
 
         clearInterval(loop);
     }

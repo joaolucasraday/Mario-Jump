@@ -69,21 +69,19 @@
     color: rgb(255, 0, 0);
 }
 
-.playagain-button {
+.gameover-box button {
     cursor: pointer;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
     padding: 15px;
     border: 5px solid black;
     font-family: 'game-font';
     font-size: 2rem;
     width: 200px;
     background-color: yellow;
+    margin: auto;
     margin-top: 20px;
 }
 
-.playagain-button:hover {
+.gameover-box button:hover {
     background-color: rgb(231, 231, 0);
 }
 
@@ -133,6 +131,7 @@ a{
 a:hover{
     background-color: rgb(231, 231, 0);
 }
+
 
 @keyframes pipe-animation {
     from{
