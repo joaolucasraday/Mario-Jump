@@ -2,25 +2,37 @@ const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 let score = 0;
 let canScore = true;
+let isJumping = false;
+let isGameOver = false;
+const gameover = document.querySelector('.gameover-box');
 
 document.querySelector('.score-box').innerText = "Score: " + score;
 
 const jump = () => {
-    mario.classList.add('jump');
-    
-    setTimeout(() => {
-        mario.classList.remove('jump');
-    }, 500);
+    if (isJumping || isGameOver) return;
 
-}
+    isJumping = true;
+    mario.classList.add('jump');
+    mario.src = './imgs/mario-jump.gif';
+    mario.style.width = '115px';
+
+    setTimeout(() => {
+        if (!isGameOver) {
+            mario.classList.remove('jump');
+            mario.src = './imgs/mario.gif';
+            mario.style.width = '150px';
+        }
+        isJumping = false;
+    }, 500);
+};
 
 
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
-    const gameover = document.querySelector('.gameover-box');
 
     if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+        isGameOver = true;
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
         mario.style.animation = 'none'; 
@@ -45,4 +57,8 @@ const loop = setInterval(() => {
     }
 }, 10);
 
-document.addEventListener('keydown', jump);
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') {
+        jump();
+    }
+});
