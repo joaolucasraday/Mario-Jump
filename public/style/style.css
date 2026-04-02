@@ -151,6 +151,56 @@ a:hover{
     background-color: rgb(231, 231, 0);
 }
 
+.creator-section {
+    font-family: 'game-font';
+    background-color: yellow;
+    border: 5px solid black;
+    width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.creator-section h1 {
+    font-size: 3rem;
+}
+
+img.foto-perfil {
+    width: 200px;
+    margin-top: 40px;
+    border: 5px solid rgb(180, 180, 0);
+}
+
+.redesSociais {
+    display: block;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+a.linkRede {
+    padding: 0 5px;
+    font-size: 2rem;
+}
+
+.back{
+    font-family: "game-font";
+    background-color: yellow;
+    border: 2px solid black;
+    font-size: 2.5rem;
+    padding: 0 10px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.back:hover{
+    background-color: rgb(231, 231, 0);
+}
+
 @keyframes pipe-animation {
     from{
         right: 0;
