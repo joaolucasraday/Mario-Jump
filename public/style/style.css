@@ -77,8 +77,14 @@
     left: 50%;
     transform: translate(-50%, -40%);
     font-family: 'game-font';
-    font-size: 3rem;
+    font-size: 4rem;
     color: rgb(255, 0, 0);
+    text-shadow:
+        -3px -3px 0 black,
+        3px -3px 0 black,
+        -3px 3px 0 black,
+        3px 3px 0 black,
+        0px 0px 10px rgba(255,255,255,0.4);
 }
 
 .gameover-box button {
