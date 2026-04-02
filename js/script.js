@@ -6,6 +6,11 @@ let isJumping = false;
 let isGameOver = false;
 const gameover = document.querySelector('.gameover-box');
 
+const bestScoreDisplay = document.querySelector('.best-score');
+
+let bestScore = localStorage.getItem('mario_best_score') || 0;
+
+bestScoreDisplay.innerText = "Best: " + bestScore;
 document.querySelector('.score-box').innerText = "Score: " + score;
 
 const jump = () => {
@@ -42,6 +47,12 @@ const loop = setInterval(() => {
         mario.style.marginLeft = '50px';
         gameover.style.display = 'grid';
 
+        if (score > bestScore) {
+            bestScore = score;
+            localStorage.setItem('mario_best_score', bestScore);
+            bestScoreDisplay.innerText = "Best: " + bestScore;
+        }
+
         clearInterval(loop);
     }
 
@@ -61,5 +72,3 @@ document.addEventListener('keydown', (e) => {
         jump();
     }
 });
-
-
