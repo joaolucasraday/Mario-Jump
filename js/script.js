@@ -42,38 +42,6 @@ const loop = setInterval(() => {
         mario.style.marginLeft = '50px';
         gameover.style.display = 'grid';
 
-        async function clicarBotaoSalvar(pontosDoJogo) {
-        // 1. Verifica se já existe um usuário logado
-        let { data: { user } } = await window.supabase.auth.getUser();
-
-        // 2. Se não estiver logado, redireciona ou abre o modal de login
-        if (!user) {
-            alert("Você precisa estar logado para salvar seu score!");
-            // Aqui você pode mostrar seu formulário de login/cadastro
-            // Após o login bem-sucedido, a variável 'user' será preenchida
-            return; 
-        }
-
-        if (error && error.message.includes('usuarios_user_name_unique')) {
-            alert("Este nome de usuário já está em uso. Escolha outro!");
-        }
-
-        // 3. Se chegou aqui, o usuário está logado. Vamos salvar!
-        try {
-            const { data, error } = await window.supabase
-            .from('usuarios')
-            .update({ score: pontosDoJogo })
-            .eq('user_id', user.id);
-
-            if (error) throw error;
-            
-            alert("Score salvo com sucesso no Ranking Global!");
-            window.location.href = 'score.html'; // Redireciona para o ranking
-        } catch (err) {
-            console.error("Erro ao salvar:", err.message);
-        }
-}
-
         clearInterval(loop);
     }
 
