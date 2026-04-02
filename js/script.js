@@ -1,6 +1,5 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
-const loginContainer = document.querySelector('.loginContainer')
 let score = 0;
 let canScore = true;
 let isJumping = false;
@@ -56,14 +55,6 @@ const loop = setInterval(() => {
         canScore = true;
     }
 }, 10);
-
-function loginUsuario() {
-    loginContainer.style.display = 'block';
-}
-
-function fecharContainer() {
-    loginContainer.style.display = 'none';
-}
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') {

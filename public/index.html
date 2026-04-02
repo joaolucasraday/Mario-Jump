@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="game-board">
+        <span class="best-score"></span>
         <span class="score-box"></span>
         <img src="../imgs/clouds.png" class="clouds">
         <img src="../imgs/mario.gif" class="mario">
@@ -15,14 +16,7 @@
         <div class="gameover-box">
             <h1>Game Over</h1>
             <button class="playagain-button" onclick="window.location.reload()">Play again</button>
-            <button class="save-score-button" onclick="loginUsuario()">Save Score</button>
-        </div>
-        <div class="loginContainer">
-            <input type="text" id="usernamme" placeholder="USUÁRIO">
-            <input type="password" id="password" placeholder="SENHA">
-            <button onclick="handleSignUp()">CADASTRAR</button>
-            <button onclick="handleLogin()">ENTRAR</button>
-            <button onclick="fecharContainer()">X</button>
+            <button class="main-menu" onclick="window.location.href = 'home.html'">Main menu</button>
         </div>
     </div>
     <script src="../js/script.js"></script>
