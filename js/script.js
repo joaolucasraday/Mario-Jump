@@ -14,13 +14,13 @@ const jump = () => {
 
     isJumping = true;
     mario.classList.add('jump');
-    mario.src = './imgs/mario-jump.gif';
+    mario.src = '../../imgs/mario-jump.gif';
     mario.style.width = '115px';
 
     setTimeout(() => {
         if (!isGameOver) {
             mario.classList.remove('jump');
-            mario.src = './imgs/mario.gif';
+            mario.src = '../../imgs/mario.gif';
             mario.style.width = '150px';
         }
         isJumping = false;
@@ -38,7 +38,7 @@ const loop = setInterval(() => {
         mario.style.animation = 'none'; 
         mario.style.bottom = `${marioPosition}px`;
 
-        mario.src = './imgs/game-over.png';
+        mario.src = '../../imgs/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
         gameover.style.display = 'grid';
